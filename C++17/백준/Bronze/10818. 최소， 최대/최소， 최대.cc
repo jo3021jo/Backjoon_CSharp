@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main() {
@@ -7,21 +8,19 @@ int main() {
 
 	int N;
 	cin >> N;
-	int* arr = new int[N];
+	int mx, mn;
+	vector<int> arr(N);
 
 	for (int i = 0; i < N; i++) {
 		cin >> arr[i];
 	}
 
-	int max = arr[0];
-	int min = arr[0];
+	mx = arr[0];
+	mn = arr[0];
 
-	for (int i = 0; i < N; i++) {
-		if (max < arr[i]) max = arr[i];
-		if (min > arr[i]) min = arr[i];
+	for (int x : arr) {
+		if (x > mx) mx = x;
+		if (x < mn) mn = x;
 	}
-
-	cout << min << " " << max << "\n";
-
-	delete[] arr;
+	cout << mn << " " << mx << "\n";
 }

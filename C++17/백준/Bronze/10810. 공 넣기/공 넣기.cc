@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 int main() {
@@ -7,19 +8,18 @@ int main() {
 
 	int N, M;
 	cin >> N >> M;
-	int* arr = new int[N]();
 
-	for (int l = 0; l < M; l++) {
+	vector<int> arr(N);
+
+	for (int b = 1; b <= M; b++) {
 		int i, j, k;
 		cin >> i >> j >> k;
-		for (int x = i-1; x <= j-1; x++) {
-			arr[x] = k;
+		for (int c = i; c <= j; c++) {
+			arr[c-1] = k;
 		}
 	}
-	
-	for (int i = 0; i < N; i++) {
-		cout << arr[i] << " ";
-	}
 
-	delete[] arr;
+	for (int b = 0; b < N; b++) {
+		cout << arr[b] << " ";
+	}
 }

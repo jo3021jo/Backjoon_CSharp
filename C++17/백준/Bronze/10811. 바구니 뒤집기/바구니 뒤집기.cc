@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 #include<algorithm>
 using namespace std;
 
@@ -7,16 +8,14 @@ int main() {
 	cin.tie(nullptr);
 
 	int N, M, i, j;
-
 	cin >> N >> M;
+	vector<int> arr(N+1);
 
-	int* arr = new int[N+1];
-	
 	for (int k = 1; k <= N; k++) {
-		arr[k] = k;	
+		arr[k] = k;
 	}
-
-	for (int k = 1; k <= M; k++) {
+	
+	for (int k = 0; k < M; k++) {
 		cin >> i >> j;
 		while (i < j) {
 			swap(arr[i], arr[j]);
@@ -28,6 +27,4 @@ int main() {
 	for (int k = 1; k <= N; k++) {
 		cout << arr[k] << " ";
 	}
-
-	delete[] arr;
 }
